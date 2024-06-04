@@ -1,0 +1,15 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace BlueHorizon.Repositories
+{
+    public interface IRepository
+    {
+        Task<IEnumerable<T>> GetAll<T>() where T : class;
+        Task<T> GetById<T>(object id) where T : class;
+        Task Add<T>(T entity) where T : class;
+        Task Update<T>(T entity) where T : class;
+        Task Delete<T>(object id) where T : class;
+        Task Save();
+    }
+}

@@ -1,0 +1,48 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using BlueHorizon.Data;
+
+namespace BlueHorizon.Repositories
+{
+    public class Repository : IRepository
+    {
+        private readonly AppDbContext _context;
+
+        public Repository(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IEnumerable<T>> GetAll<T>() where T : class
+        {
+            return await _context.Set<T>().ToListAsync();
+        }
+
+        public async Task<T> GetById<T>(object id) where T : class
+        {
+            return await _context.Set<T>().FindAsync(id);
+        }
+
+        public async Task Add<T>(T entity) where T : class
+        {
+            await _context.Set<T>().AddAsync(entity);
+        }
+
+        public async Task Update<T>(T entity) where T : class
+        {
+            _context.Set<T>().Update(entity);
+        }
+
+        public async Task Delete<T>(object id) where T : class
+        {
+            var entity = await GetById<T>(id);
+            _context.Set<T>().Remove(entity);
+        }
+
+        public async Task Save()
+        {
+            await _context.SaveChangesAsync();
+        }
+    }
+}
