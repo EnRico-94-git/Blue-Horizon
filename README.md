@@ -1,7 +1,7 @@
 # Blue-Horizon
 Projeto criado para fins de estudo em um desfaio(Global Solution) da faculdade FIAP, feito com linguagem de C# para a matéria de .NET
-
-## Este projeto é um sistema de gerenciamento de pesca sustentável desenvolvido em ASP.NET Core MVC. O objetivo é ajudar a melhorar e preservar o meio ambiente marinho por meio de práticas de pesca sustentável.
+Este projeto é um sistema de gerenciamento de pesca sustentável desenvolvido em ASP.NET Core MVC. 
+O objetivo é ajudar a melhorar e preservar o meio ambiente marinho por meio de práticas de pesca sustentável.
 
 ### Funcionalidades
 - Gerenciamento de animais marinhos
